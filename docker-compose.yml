@@ -8,7 +8,7 @@ services:
     ports:
     - 8000:80
     volumes:
-      - cache:/var/cache/nginx/
+      - ./cache:/var/cache/nginx/
     labels:
       - "traefik.frontend.rule=Host:deesylab.cchampou.me"
       - "traefik.backend.port=80"
