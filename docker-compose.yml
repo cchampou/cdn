@@ -7,6 +7,8 @@ services:
     restart: always
     networks:
       - layko_net
+    ports:
+    - 8000:80
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
