@@ -1,0 +1,17 @@
+version: '3'
+services:
+  portainer:
+    build:
+      context: .
+    image: deesylab-cache
+    restart: always
+    networks:
+      - layko_net
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - "traefik.frontend.rule=Host:deesylab.cchampou.me"
+
+networks:
+  layko_net:
+    driver: bridge
