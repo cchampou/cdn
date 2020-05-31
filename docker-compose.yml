@@ -5,8 +5,6 @@ services:
       context: .
     image: deesylab-cache
     restart: always
-    networks:
-      - layko_net
     ports:
     - 8000:80
     volumes:
@@ -17,7 +15,7 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=layko_layko_net"
 
-
 networks:
-  layko_net:
-    driver: bridge
+  default:
+    external:
+      name: layko_layko_net
